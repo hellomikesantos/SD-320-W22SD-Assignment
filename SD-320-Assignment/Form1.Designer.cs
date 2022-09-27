@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.AppTitle = new System.Windows.Forms.Label();
-            this.textBoxOutput = new System.Windows.Forms.Panel();
+            this.textBoxPanel = new System.Windows.Forms.Panel();
             this.buttonNo7 = new System.Windows.Forms.Button();
             this.buttonNo8 = new System.Windows.Forms.Button();
             this.buttonNo9 = new System.Windows.Forms.Button();
@@ -49,6 +49,8 @@
             this.buttonClear = new System.Windows.Forms.Button();
             this.buttonDivideSign = new System.Windows.Forms.Button();
             this.buttonClearEntry = new System.Windows.Forms.Button();
+            this.textBoxOutput = new System.Windows.Forms.TextBox();
+            this.textBoxPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // AppTitle
@@ -64,12 +66,18 @@
             this.AppTitle.Text = "Calculator";
             this.AppTitle.Click += new System.EventHandler(this.label1_Click);
             // 
-            // textBoxOutput
+            // textBoxPanel
             // 
-            this.textBoxOutput.Location = new System.Drawing.Point(16, 37);
-            this.textBoxOutput.Name = "textBoxOutput";
-            this.textBoxOutput.Size = new System.Drawing.Size(294, 61);
-            this.textBoxOutput.TabIndex = 1;
+            this.textBoxPanel.AccessibleDescription = "Textbox Output Screen";
+            this.textBoxPanel.AccessibleName = "Output Screen";
+            this.textBoxPanel.BackColor = System.Drawing.Color.White;
+            this.textBoxPanel.Controls.Add(this.textBoxOutput);
+            this.textBoxPanel.Enabled = false;
+            this.textBoxPanel.Location = new System.Drawing.Point(16, 37);
+            this.textBoxPanel.Name = "textBoxPanel";
+            this.textBoxPanel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.textBoxPanel.Size = new System.Drawing.Size(294, 61);
+            this.textBoxPanel.TabIndex = 1;
             // 
             // buttonNo7
             // 
@@ -288,11 +296,18 @@
             this.buttonClearEntry.Text = "CE";
             this.buttonClearEntry.UseVisualStyleBackColor = false;
             // 
+            // textBoxOutput
+            // 
+            this.textBoxOutput.Location = new System.Drawing.Point(75, 20);
+            this.textBoxOutput.Name = "textBoxOutput";
+            this.textBoxOutput.Size = new System.Drawing.Size(219, 23);
+            this.textBoxOutput.TabIndex = 0;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(357, 450);
+            this.ClientSize = new System.Drawing.Size(329, 450);
             this.Controls.Add(this.buttonClearEntry);
             this.Controls.Add(this.buttonDivideSign);
             this.Controls.Add(this.buttonClear);
@@ -312,10 +327,12 @@
             this.Controls.Add(this.buttonNo9);
             this.Controls.Add(this.buttonNo8);
             this.Controls.Add(this.buttonNo7);
-            this.Controls.Add(this.textBoxOutput);
+            this.Controls.Add(this.textBoxPanel);
             this.Controls.Add(this.AppTitle);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.textBoxPanel.ResumeLayout(false);
+            this.textBoxPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -324,7 +341,7 @@
         #endregion
 
         private Label AppTitle;
-        private Panel textBoxOutput;
+        private Panel textBoxPanel;
         private Button buttonNo7;
         private Button buttonNo8;
         private Button buttonNo9;
@@ -344,5 +361,6 @@
         private Button buttonClear;
         private Button buttonDivideSign;
         private Button buttonClearEntry;
+        private TextBox textBoxOutput;
     }
 }
