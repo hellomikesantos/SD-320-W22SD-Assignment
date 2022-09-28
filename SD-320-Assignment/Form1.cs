@@ -1,3 +1,5 @@
+using System.Data;
+
 namespace SD_320_Assignment
 {
     public partial class Form1 : Form
@@ -18,6 +20,25 @@ namespace SD_320_Assignment
         private void textBoxOutput_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void buttonEquals_Click(object sender, EventArgs e)
+        {
+            string calculationNewFormat = presentOperation.ToString().Replace("x", "*").ToString().Replace("÷", "/");
+            try
+            {
+                textBoxOutput.Text = new DataTable().Compute(calculationNewFormat, null).ToString();
+                presentOperation = textBoxOutput.Text;
+            }
+            catch (Exception ex)
+            {
+                textBoxOutput.Text = "0";
+                presentOperation = "";
+            }
         }
     }
 }
