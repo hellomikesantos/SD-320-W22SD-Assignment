@@ -24,8 +24,19 @@ namespace SD_320_Assignment
 
         private void buttonClear_Click(object sender, EventArgs e)
         {
-
+            textBoxOutput.Text = "0";
+            presentOperation = "";
         }
+
+        private void buttonClearEntry_Click(object sender, EventArgs e)
+        {
+            if (presentOperation.Length > 0)
+            {
+                presentOperation = presentOperation.Remove(presentOperation.Length - 1, 1);
+            }
+            textBoxOutput.Text = presentOperation;
+        }
+
         private void buttonEquals_Click(object sender, EventArgs e)
         {
             string calculationNewFormat = presentOperation.ToString().Replace("x", "*").ToString().Replace("÷", "/");

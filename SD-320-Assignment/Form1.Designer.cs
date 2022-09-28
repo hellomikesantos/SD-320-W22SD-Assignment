@@ -246,6 +246,7 @@
             this.buttonEqualsSign.TabIndex = 14;
             this.buttonEqualsSign.Text = "=";
             this.buttonEqualsSign.UseVisualStyleBackColor = false;
+            this.buttonEqualsSign.Click += new System.EventHandler(this.buttonEquals_Click);
             // 
             // buttonPlusSign
             // 
