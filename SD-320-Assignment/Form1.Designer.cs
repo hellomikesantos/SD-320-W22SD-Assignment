@@ -72,7 +72,6 @@
             this.textBoxPanel.AccessibleName = "Output Screen";
             this.textBoxPanel.BackColor = System.Drawing.Color.White;
             this.textBoxPanel.Controls.Add(this.textBoxOutput);
-            this.textBoxPanel.Enabled = false;
             this.textBoxPanel.Location = new System.Drawing.Point(16, 37);
             this.textBoxPanel.Name = "textBoxPanel";
             this.textBoxPanel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -100,6 +99,7 @@
             this.buttonNo8.TabIndex = 3;
             this.buttonNo8.Text = "8";
             this.buttonNo8.UseVisualStyleBackColor = true;
+            this.buttonNo8.Click += new System.EventHandler(this.label1_Click);
             // 
             // buttonNo9
             // 
@@ -298,10 +298,16 @@
             // 
             // textBoxOutput
             // 
-            this.textBoxOutput.Location = new System.Drawing.Point(75, 20);
+            this.textBoxOutput.AccessibleDescription = "Output Screen with operation";
+            this.textBoxOutput.AccessibleName = "Output Screen";
+            this.textBoxOutput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxOutput.Enabled = false;
+            this.textBoxOutput.Location = new System.Drawing.Point(72, 20);
             this.textBoxOutput.Name = "textBoxOutput";
-            this.textBoxOutput.Size = new System.Drawing.Size(219, 23);
+            this.textBoxOutput.Size = new System.Drawing.Size(219, 16);
             this.textBoxOutput.TabIndex = 0;
+            this.textBoxOutput.Text = "0";
+            this.textBoxOutput.TextChanged += new System.EventHandler(this.textBoxOutput_TextChanged);
             // 
             // Form1
             // 
