@@ -49,7 +49,8 @@
             this.buttonMultiplySign = new System.Windows.Forms.Button();
             this.buttonClear = new System.Windows.Forms.Button();
             this.buttonDivideSign = new System.Windows.Forms.Button();
-            this.buttonClearEntry = new System.Windows.Forms.Button();
+            this.buttonBIN = new System.Windows.Forms.Button();
+            this.buttonDEC = new System.Windows.Forms.Button();
             this.textBoxPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,11 +83,13 @@
             // 
             this.textBoxOutput.AccessibleDescription = "Output Screen with operation";
             this.textBoxOutput.AccessibleName = "Output Screen";
+            this.textBoxOutput.BackColor = System.Drawing.Color.White;
             this.textBoxOutput.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxOutput.Enabled = false;
-            this.textBoxOutput.Location = new System.Drawing.Point(72, 20);
+            this.textBoxOutput.Font = new System.Drawing.Font("Segoe UI", 34F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxOutput.Location = new System.Drawing.Point(72, 0);
             this.textBoxOutput.Name = "textBoxOutput";
-            this.textBoxOutput.Size = new System.Drawing.Size(219, 16);
+            this.textBoxOutput.Size = new System.Drawing.Size(219, 61);
             this.textBoxOutput.TabIndex = 0;
             this.textBoxOutput.Text = "0";
             this.textBoxOutput.TextChanged += new System.EventHandler(this.textBoxOutput_TextChanged);
@@ -294,7 +297,7 @@
             this.buttonClear.BackColor = System.Drawing.Color.Orange;
             this.buttonClear.Location = new System.Drawing.Point(16, 104);
             this.buttonClear.Name = "buttonClear";
-            this.buttonClear.Size = new System.Drawing.Size(144, 50);
+            this.buttonClear.Size = new System.Drawing.Size(69, 50);
             this.buttonClear.TabIndex = 18;
             this.buttonClear.Text = "C";
             this.buttonClear.UseVisualStyleBackColor = false;
@@ -313,24 +316,37 @@
             this.buttonDivideSign.UseVisualStyleBackColor = false;
             this.buttonDivideSign.Click += new System.EventHandler(this.label1_Click);
             // 
-            // buttonClearEntry
+            // buttonBIN
             // 
-            this.buttonClearEntry.AccessibleDescription = "Keypad Clear Entry";
-            this.buttonClearEntry.AccessibleName = "Button Clear Entry";
-            this.buttonClearEntry.BackColor = System.Drawing.Color.PeachPuff;
-            this.buttonClearEntry.Location = new System.Drawing.Point(166, 104);
-            this.buttonClearEntry.Name = "buttonClearEntry";
-            this.buttonClearEntry.Size = new System.Drawing.Size(69, 50);
-            this.buttonClearEntry.TabIndex = 21;
-            this.buttonClearEntry.Text = "CE";
-            this.buttonClearEntry.UseVisualStyleBackColor = false;
+            this.buttonBIN.AccessibleDescription = "Keypad Convert to Binary";
+            this.buttonBIN.AccessibleName = "Button Binary";
+            this.buttonBIN.Location = new System.Drawing.Point(91, 104);
+            this.buttonBIN.Name = "buttonBIN";
+            this.buttonBIN.Size = new System.Drawing.Size(69, 50);
+            this.buttonBIN.TabIndex = 21;
+            this.buttonBIN.Text = "BIN";
+            this.buttonBIN.UseVisualStyleBackColor = true;
+            this.buttonBIN.Click += new System.EventHandler(this.buttonBIN_Click);
+            // 
+            // buttonDEC
+            // 
+            this.buttonDEC.AccessibleDescription = "Keypad Convert to Decimal ";
+            this.buttonDEC.AccessibleName = "Button Decimal";
+            this.buttonDEC.Location = new System.Drawing.Point(166, 104);
+            this.buttonDEC.Name = "buttonDEC";
+            this.buttonDEC.Size = new System.Drawing.Size(69, 50);
+            this.buttonDEC.TabIndex = 22;
+            this.buttonDEC.Text = "DEC";
+            this.buttonDEC.UseVisualStyleBackColor = true;
+            this.buttonDEC.Click += new System.EventHandler(this.buttonDEC_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(329, 450);
-            this.Controls.Add(this.buttonClearEntry);
+            this.Controls.Add(this.buttonDEC);
+            this.Controls.Add(this.buttonBIN);
             this.Controls.Add(this.buttonDivideSign);
             this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.buttonMultiplySign);
@@ -382,7 +398,8 @@
         private Button buttonMultiplySign;
         private Button buttonClear;
         private Button buttonDivideSign;
-        private Button buttonClearEntry;
         private TextBox textBoxOutput;
+        private Button buttonBIN;
+        private Button buttonDEC;
     }
 }

@@ -1,4 +1,5 @@
 using System.Data;
+using System.Linq;
 
 namespace SD_320_Assignment
 {
@@ -28,14 +29,14 @@ namespace SD_320_Assignment
             presentOperation = "";
         }
 
-        private void buttonClearEntry_Click(object sender, EventArgs e)
-        {
-            if (presentOperation.Length > 0)
-            {
-                presentOperation = presentOperation.Remove(presentOperation.Length - 1, 1);
-            }
-            textBoxOutput.Text = presentOperation;
-        }
+        //private void buttonClearEntry_Click(object sender, EventArgs e)
+        //{
+        //    if (presentOperation.Length > 0)
+        //    {
+        //        presentOperation = presentOperation.Remove(presentOperation.Length - 1, 1);
+        //    }
+        //    textBoxOutput.Text = presentOperation;
+        //}
 
         private void buttonEquals_Click(object sender, EventArgs e)
         {
@@ -50,6 +51,31 @@ namespace SD_320_Assignment
                 textBoxOutput.Text = "0";
                 presentOperation = "";
             }
+        }
+
+        private void buttonBIN_Click(object sender, EventArgs e)
+        {
+            if(!textBoxOutput.Text.Contains("1") || !textBoxOutput.Text.Contains("0"))
+            {
+                string decNumString = textBoxOutput.Text;
+                int decNum = int.Parse(decNumString);
+                string newString = string.Empty;
+                for (int i = 0; decNum > 0; i++)
+                {
+                    newString = decNum % 2 + newString;
+                    decNum = decNum / 2;
+                }
+
+                textBoxOutput.Text = newString;
+            } else {
+                
+            }
+
+        }
+
+        private void buttonDEC_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
