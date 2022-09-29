@@ -53,9 +53,10 @@ namespace SD_320_Assignment
             }
         }
 
+        //this tutorial helped me construct my function https://dotnettutorials.net/lesson/decimal-to-binary-conversion-in-csharp/
         private void buttonBIN_Click(object sender, EventArgs e)
         {
-            if(!textBoxOutput.Text.Contains("1") || !textBoxOutput.Text.Contains("0"))
+            if(!textBoxOutput.Text.Contains("1") && !textBoxOutput.Text.Contains("0"))
             {
                 string decNumString = textBoxOutput.Text;
                 int decNum = int.Parse(decNumString);
@@ -68,13 +69,34 @@ namespace SD_320_Assignment
 
                 textBoxOutput.Text = newString;
             } else {
-                
+                return; 
             }
 
         }
 
+
         private void buttonDEC_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (textBoxOutput.Text.Contains("1") && textBoxOutput.Text.Contains("0"))
+                {
+
+                    string binNumString = textBoxOutput.Text;
+                    int binNum = int.Parse(binNumString);
+                    int decimalNum = Convert.ToInt32(binNum.ToString(), 2);
+
+                    textBoxOutput.Text = decimalNum.ToString();
+                }
+                else
+                {
+                    return;
+                }
+            }
+            catch(Exception ex)
+            {
+
+            }
 
         }
     }
