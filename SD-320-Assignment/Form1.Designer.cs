@@ -51,6 +51,7 @@
             this.buttonDivideSign = new System.Windows.Forms.Button();
             this.buttonBIN = new System.Windows.Forms.Button();
             this.buttonDEC = new System.Windows.Forms.Button();
+            this.textBoxOutput2 = new System.Windows.Forms.TextBox();
             this.textBoxPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,6 +73,7 @@
             this.textBoxPanel.AccessibleDescription = "Textbox Output Screen";
             this.textBoxPanel.AccessibleName = "Output Screen";
             this.textBoxPanel.BackColor = System.Drawing.Color.White;
+            this.textBoxPanel.Controls.Add(this.textBoxOutput2);
             this.textBoxPanel.Controls.Add(this.textBoxOutput);
             this.textBoxPanel.Location = new System.Drawing.Point(16, 37);
             this.textBoxPanel.Name = "textBoxPanel";
@@ -86,10 +88,10 @@
             this.textBoxOutput.BackColor = System.Drawing.Color.White;
             this.textBoxOutput.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxOutput.Enabled = false;
-            this.textBoxOutput.Font = new System.Drawing.Font("Segoe UI", 34F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxOutput.Location = new System.Drawing.Point(72, 0);
+            this.textBoxOutput.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBoxOutput.Location = new System.Drawing.Point(72, 22);
             this.textBoxOutput.Name = "textBoxOutput";
-            this.textBoxOutput.Size = new System.Drawing.Size(219, 61);
+            this.textBoxOutput.Size = new System.Drawing.Size(219, 36);
             this.textBoxOutput.TabIndex = 0;
             this.textBoxOutput.Text = "0";
             this.textBoxOutput.TextChanged += new System.EventHandler(this.textBoxOutput_TextChanged);
@@ -340,6 +342,17 @@
             this.buttonDEC.UseVisualStyleBackColor = true;
             this.buttonDEC.Click += new System.EventHandler(this.buttonDEC_Click);
             // 
+            // textBoxOutput2
+            // 
+            this.textBoxOutput2.AccessibleDescription = "Secondary screen output";
+            this.textBoxOutput2.AccessibleName = "Secondary output Screen";
+            this.textBoxOutput2.BackColor = System.Drawing.Color.White;
+            this.textBoxOutput2.Location = new System.Drawing.Point(72, 0);
+            this.textBoxOutput2.Name = "textBoxOutput2";
+            this.textBoxOutput2.Size = new System.Drawing.Size(219, 23);
+            this.textBoxOutput2.TabIndex = 1;
+            this.textBoxOutput2.TextChanged += new System.EventHandler(this.textBoxOutput2_TextChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -401,5 +414,6 @@
         private TextBox textBoxOutput;
         private Button buttonBIN;
         private Button buttonDEC;
+        private TextBox textBoxOutput2;
     }
 }
