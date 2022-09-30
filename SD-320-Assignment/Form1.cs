@@ -13,39 +13,46 @@ namespace SD_320_Assignment
 
         private void label1_Click(object sender, EventArgs e)
         {
-            
-            presentOperation += (sender as Button).Text;
-            if(presentOperation.Contains('x')
-                || presentOperation.Contains('+')
-                || presentOperation.Contains('-')
-                || presentOperation.Contains('÷'))
+            try
             {
-                textBoxOutput2.Text = presentOperation;
-                if ((sender as Button).Text != '÷'.ToString()
-                    || (sender as Button).Text != 'x'.ToString()
-                    || (sender as Button).Text != '+'.ToString()
-                    || (sender as Button).Text != '-'.ToString())
+                presentOperation += (sender as Button).Text;
+                if (presentOperation.Contains('x')
+                    || presentOperation.Contains('+')
+                    || presentOperation.Contains('-')
+                    || presentOperation.Contains('÷'))
                 {
-                    textBoxOutput.Text = (sender as Button).Text;
+                    textBoxOutput2.Text = presentOperation;
+                    if ((sender as Button).Text != '÷'.ToString()
+                        || (sender as Button).Text != 'x'.ToString()
+                        || (sender as Button).Text != '+'.ToString()
+                        || (sender as Button).Text != '-'.ToString())
+                    {
+                        textBoxOutput.Text = (sender as Button).Text;
+                    }
+                    //this.buttonEquals_Click(sender, e);
                 }
-                //this.buttonEquals_Click(sender, e);
+                else if (int.Parse((sender as Button).Text).GetType() == typeof(int))
+                {
+                    textBoxOutput.Text = presentOperation;
+                    if (textBoxOutput2.Text.Contains('x')
+                        || textBoxOutput2.Text.Contains('+')
+                        || textBoxOutput2.Text.Contains('-')
+                        || textBoxOutput2.Text.Contains('÷'))
+                    {
+                        textBoxOutput.Text = (sender as Button).Text;
+                    }
+                }
+
+                else
+                {
+                    textBoxOutput.Text = presentOperation;
+                }
             }
-            else if (int.Parse((sender as Button).Text).GetType() == typeof(int))
+            catch
             {
-                textBoxOutput.Text = (sender as Button).Text;
-                if (textBoxOutput2.Text.Contains('x')
-                    || textBoxOutput2.Text.Contains('+')
-                    || textBoxOutput2.Text.Contains('-')
-                    || textBoxOutput2.Text.Contains('÷'))
-                {
-                    textBoxOutput.Text = (sender as Button).Text;
-                }
+                textBoxOutput.Text = "ERROR";
             }
 
-            else
-            {
-                textBoxOutput.Text = (sender as Button).Text;
-            }
 
         }
 
@@ -61,15 +68,6 @@ namespace SD_320_Assignment
             textBoxOutput2.Text = "";
         }
 
-        //private void buttonClearEntry_Click(object sender, EventArgs e)
-        //{
-        //    if (presentOperation.Length > 0)
-        //    {
-        //        presentOperation = presentOperation.Remove(presentOperation.Length - 1, 1);
-        //    }
-        //    textBoxOutput.Text = presentOperation;
-        //}
-
         private void buttonEquals_Click(object sender, EventArgs e)
         {
             string calculationNewFormat = presentOperation.ToString().Replace("x", "*").ToString().Replace("÷", "/");
@@ -78,10 +76,9 @@ namespace SD_320_Assignment
                 textBoxOutput.Text = new DataTable().Compute(calculationNewFormat, null).ToString();
                 presentOperation = textBoxOutput.Text;
             }
-            catch (Exception ex)
+            catch
             {
-                //textBoxOutput.Text = "0";
-                //presentOperation = "";
+                textBoxOutput.Text = "ERROR";
             }
         }
 
@@ -107,12 +104,11 @@ namespace SD_320_Assignment
                 {
                     return;
                 }
-            } catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
             }
-
-
+            catch
+            {
+                textBoxOutput.Text = "ERROR";
+            }
         }
 
 
@@ -134,11 +130,10 @@ namespace SD_320_Assignment
                     return;
                 }
             }
-            catch(Exception ex)
+            catch
             {
-                Console.WriteLine(ex.Message);
+                textBoxOutput.Text = "ERROR";
             }
-
         }
 
         private void textBoxOutput2_TextChanged(object sender, EventArgs e)

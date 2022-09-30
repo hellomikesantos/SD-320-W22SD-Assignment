@@ -30,6 +30,7 @@
         {
             this.AppTitle = new System.Windows.Forms.Label();
             this.textBoxPanel = new System.Windows.Forms.Panel();
+            this.textBoxOutput2 = new System.Windows.Forms.TextBox();
             this.textBoxOutput = new System.Windows.Forms.TextBox();
             this.buttonNo7 = new System.Windows.Forms.Button();
             this.buttonNo8 = new System.Windows.Forms.Button();
@@ -51,7 +52,6 @@
             this.buttonDivideSign = new System.Windows.Forms.Button();
             this.buttonBIN = new System.Windows.Forms.Button();
             this.buttonDEC = new System.Windows.Forms.Button();
-            this.textBoxOutput2 = new System.Windows.Forms.TextBox();
             this.textBoxPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,6 +81,17 @@
             this.textBoxPanel.Size = new System.Drawing.Size(294, 61);
             this.textBoxPanel.TabIndex = 1;
             // 
+            // textBoxOutput2
+            // 
+            this.textBoxOutput2.AccessibleDescription = "Secondary screen output";
+            this.textBoxOutput2.AccessibleName = "Secondary output Screen";
+            this.textBoxOutput2.BackColor = System.Drawing.Color.White;
+            this.textBoxOutput2.Location = new System.Drawing.Point(72, 0);
+            this.textBoxOutput2.Name = "textBoxOutput2";
+            this.textBoxOutput2.Size = new System.Drawing.Size(219, 23);
+            this.textBoxOutput2.TabIndex = 1;
+            this.textBoxOutput2.TextChanged += new System.EventHandler(this.textBoxOutput2_TextChanged);
+            // 
             // textBoxOutput
             // 
             this.textBoxOutput.AccessibleDescription = "Output Screen with operation";
@@ -91,6 +102,7 @@
             this.textBoxOutput.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxOutput.Location = new System.Drawing.Point(72, 22);
             this.textBoxOutput.Name = "textBoxOutput";
+            this.textBoxOutput.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.textBoxOutput.Size = new System.Drawing.Size(219, 36);
             this.textBoxOutput.TabIndex = 0;
             this.textBoxOutput.Text = "0";
@@ -341,17 +353,6 @@
             this.buttonDEC.Text = "DEC";
             this.buttonDEC.UseVisualStyleBackColor = true;
             this.buttonDEC.Click += new System.EventHandler(this.buttonDEC_Click);
-            // 
-            // textBoxOutput2
-            // 
-            this.textBoxOutput2.AccessibleDescription = "Secondary screen output";
-            this.textBoxOutput2.AccessibleName = "Secondary output Screen";
-            this.textBoxOutput2.BackColor = System.Drawing.Color.White;
-            this.textBoxOutput2.Location = new System.Drawing.Point(72, 0);
-            this.textBoxOutput2.Name = "textBoxOutput2";
-            this.textBoxOutput2.Size = new System.Drawing.Size(219, 23);
-            this.textBoxOutput2.TabIndex = 1;
-            this.textBoxOutput2.TextChanged += new System.EventHandler(this.textBoxOutput2_TextChanged);
             // 
             // Form1
             // 
